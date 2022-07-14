@@ -5,8 +5,7 @@ body {
     height: 100%;
     width: 100%;
     background: url("/assets/images/login_bg.jpg") no-repeat center;
-    /* background: url("/assets/images/maid/lo_01.jpg") no-repeat center; */
-    background-size: cover;    
+    background-size: cover;
 }
 
 .loginAndRegBox {

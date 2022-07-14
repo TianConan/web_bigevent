@@ -4,7 +4,23 @@
 
 $.ajaxPrefilter(function (option) {
     option.url = 'http://www.liulongbin.top:3007' + option.url;
-    console.log(option.url);
+
+    // 配置请求头（只有 带了/my/的才需要请求头）
+    if (option.url.indexOf('/my/') !== -1) {
+        option.headers = {
+            Authorization: localStorage.getItem('token') || ''
+        }       
+    }    
+
+    option.complete = function (res) {
+        console.log('complete 的回调  :');
+        console.log(res);
+        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
+            localStorage.removeItem('token');
+            location.href = '/login.html';
+        }
+    }
+
 })
 
 
