@@ -1,0 +1,21 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #D3D1CD;
+    padding: 15px;
+}
+
+.layui-input {
+    width: 500px;
+}
+
+/* css属性选择器 */
+input[name='username'] {
+    cursor: not-allowed;
+}
+
+
